@@ -2,6 +2,30 @@ import 'package:flutter/material.dart';
 
 import 'package:clip_regular_polygon/clip_regular_polygon.dart';
 
+extension on RegularPolygon {
+  RegularPolygon copyWith({
+    int? sides,
+    num? rotation,
+    Corner? corners,
+  }) =>
+      RegularPolygon(
+        sides: sides ?? this.sides,
+        rotation: rotation ?? this.rotation,
+        corners: corners ?? this.corners,
+      );
+}
+
+extension on Corner {
+  Corner copyWith({
+    CornerShape? shape,
+    num? radius,
+  }) =>
+      Corner(
+        shape: shape ?? this.shape,
+        radius: radius ?? this.radius,
+      );
+}
+
 void main() {
   runApp(Showcase());
 }
