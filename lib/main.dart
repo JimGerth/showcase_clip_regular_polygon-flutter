@@ -43,6 +43,14 @@ class _ShowcaseState extends State<Showcase> {
     rotation: 90,
   );
 
+  void _setSides(double sides) {
+    setState(() {
+      _regularPolygon = _regularPolygon.copyWith(
+        sides: sides.round(),
+      );
+    });
+  }
+
   void _setRotation(double rotation) {
     setState(() {
       _regularPolygon = _regularPolygon.copyWith(
@@ -89,6 +97,13 @@ class _ShowcaseState extends State<Showcase> {
                     ),
                   ),
                 ),
+              ),
+              Slider(
+                min: 3,
+                max: 10,
+                divisions: 7,
+                value: _regularPolygon.sides.toDouble(),
+                onChanged: _setSides,
               ),
               Slider(
                 min: 0,
