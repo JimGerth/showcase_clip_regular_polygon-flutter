@@ -43,6 +43,14 @@ class _ShowcaseState extends State<Showcase> {
     rotation: 90,
   );
 
+  void _setRotation(double rotation) {
+    setState(() {
+      _regularPolygon = _regularPolygon.copyWith(
+        rotation: rotation,
+      );
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -71,6 +79,12 @@ class _ShowcaseState extends State<Showcase> {
                     ),
                   ),
                 ),
+              ),
+              Slider(
+                min: 0,
+                max: 360,
+                value: _regularPolygon.rotation,
+                onChanged: _setRotation,
               ),
             ],
           ),
