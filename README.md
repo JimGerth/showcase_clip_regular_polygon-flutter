@@ -2,6 +2,8 @@
 
 A simple app showcasing the features of the [clip_regular_polygon package](https://github.com/JimGerth/clip_regular_polygon-flutter).
 
+![ezgif-2-635b314c6b3b](./showcase.gif)
+
 ## Try it
 
 To run this app and try out its features you need to have `flutter` installed.
