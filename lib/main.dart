@@ -51,6 +51,16 @@ class _ShowcaseState extends State<Showcase> {
     });
   }
 
+  void _setRadius(double radius) {
+    setState(() {
+      _regularPolygon = _regularPolygon.copyWith(
+        corners: _regularPolygon.corners.copyWith(
+          radius: radius,
+        ),
+      );
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -85,6 +95,12 @@ class _ShowcaseState extends State<Showcase> {
                 max: 360,
                 value: _regularPolygon.rotation,
                 onChanged: _setRotation,
+              ),
+              Slider(
+                min: 0,
+                max: 1,
+                value: _regularPolygon.corners.radius,
+                onChanged: _setRadius,
               ),
             ],
           ),
