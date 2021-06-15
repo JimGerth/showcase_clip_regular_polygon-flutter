@@ -59,6 +59,16 @@ class _ShowcaseState extends State<Showcase> {
     });
   }
 
+  void _setCornerShape(CornerShape? cornerShape) {
+    setState(() {
+      _regularPolygon = _regularPolygon.copyWith(
+        corners: _regularPolygon.corners.copyWith(
+          shape: cornerShape ?? CornerShape.sharp,
+        ),
+      );
+    });
+  }
+
   void _setRadius(double radius) {
     setState(() {
       _regularPolygon = _regularPolygon.copyWith(
@@ -111,6 +121,17 @@ class _ShowcaseState extends State<Showcase> {
                 value: _regularPolygon.rotation,
                 onChanged: _setRotation,
               ),
+              for (CornerShape cornerShape in CornerShape.values)
+                Row(
+                  children: <Widget>[
+                    Radio<CornerShape>(
+                      value: cornerShape,
+                      groupValue: _regularPolygon.corners.shape,
+                      onChanged: _setCornerShape,
+                    ),
+                    Text(cornerShape.toString()),
+                  ],
+                ),
               Slider(
                 min: 0,
                 max: 1,
