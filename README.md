@@ -1,16 +1,15 @@
 # showcase_clip_regular_polygon
 
-A new Flutter project.
+A simple app showcasing the features of the [clip_regular_polygon package](https://github.com/JimGerth/clip_regular_polygon-flutter).
 
-## Getting Started
+## Try it
 
-This project is a starting point for a Flutter application.
+To run this app and try out its features you need to have `flutter` installed.
+See [flutter.dev](https://flutter.dev/docs/get-started/install) for help with that.
 
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
-
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+If you have `flutter` installed, run:
+```bash
+git clone https://github.com/JimGerth/showcase_clip_regular_polygon-flutter.git
+cd schowcase_clip_regular_polygon
+flutter run
+```
