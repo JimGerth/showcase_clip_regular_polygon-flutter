@@ -38,10 +38,18 @@ class Showcase extends StatefulWidget {
 }
 
 class _ShowcaseState extends State<Showcase> {
+  bool _showBounds = false;
+
   RegularPolygon _regularPolygon = RegularPolygon.hexagon(
     corners: Corner.round(0.15),
     rotation: 90,
   );
+
+  void _toggleBounds() {
+    setState(() {
+      _showBounds = !_showBounds;
+    });
+  }
 
   void _setSides(double sides) {
     setState(() {
@@ -98,12 +106,15 @@ class _ShowcaseState extends State<Showcase> {
           child: Column(
             children: <Widget>[
               Expanded(
-                child: ClipRegularPolygon(
-                  regularPolygon: _regularPolygon,
-                  child: Material(
-                    color: Colors.grey[100],
-                    child: InkWell(
-                      onTap: () {},
+                child: Container(
+                  color: _showBounds ? Colors.grey[800] : Colors.transparent,
+                  child: ClipRegularPolygon(
+                    regularPolygon: _regularPolygon,
+                    child: Material(
+                      color: Colors.grey[100],
+                      child: InkWell(
+                        onTap: _toggleBounds,
+                      ),
                     ),
                   ),
                 ),
